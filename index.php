@@ -15,6 +15,13 @@
 
 get_header(); ?>
 
+<?php
+	/* debug template filename */
+	if (is_user_logged_in()) {
+		echo ('<div class="ltg-debug filename">' . basename(__FILE__) . '</div>');
+	}
+?>
+
 <div class="main-container">
 	<div class="main-grid">
 		<main class="main-content">

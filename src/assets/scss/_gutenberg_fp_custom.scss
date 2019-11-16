@@ -1,0 +1,79 @@
+/** ltg mastered */
+
+$selector: '.wp-block-column';
+$gutter-output:true;
+$gutters:map-get($grid-margin-gutters, medium);
+$small-gutters:map-get($grid-margin-gutters, small);
+$gutter-type:margin;
+$gutter-position: right left;
+$breakpoint:null;
+$vertical: false; 
+
+
+entry-content > p.has-background {
+	margin-top: (map-get($grid-margin-gutters, 'small'))/2;
+	margin-bottom: (map-get($grid-margin-gutters, 'small'))/2;
+	margin-left: -(map-get($grid-margin-gutters, 'small'))/2;
+	margin-right: -(map-get($grid-margin-gutters, 'small'))/2;
+	@include breakpoint (medium) {
+		margin-top: (map-get($grid-margin-gutters, 'medium'))/2;
+		margin-bottom: (map-get($grid-margin-gutters, 'medium'))/2;
+		margin-left: -(map-get($grid-margin-gutters, 'medium'))/2;
+		margin-right: -(map-get($grid-margin-gutters, 'medium'))/2;
+	}
+}
+
+.wp-block-columns {
+	p.has-background, .wp-block-column {
+		margin-bottom: 0;
+	}
+	margin-top: (map-get($grid-margin-gutters, 'small'));
+	margin-bottom: (map-get($grid-margin-gutters, 'small'));
+	margin-left: -(map-get($grid-margin-gutters, 'small'))/2;
+	margin-right: -(map-get($grid-margin-gutters, 'small'))/2;
+	@include breakpoint (medium) {
+		margin-top: (map-get($grid-margin-gutters, 'medium'));
+		margin-bottom: (map-get($grid-margin-gutters, 'medium'));
+		margin-left: -(map-get($grid-margin-gutters, 'medium'))/2;
+		margin-right: -(map-get($grid-margin-gutters, 'medium'))/2;
+	}
+	&.has-2-columns {
+		@include xy-grid-layout(1, $selector, $gutter-output, $small-gutters, $gutter-type, $gutter-position, $breakpoint, $vertical);
+		@include breakpoint(medium) {
+			@include xy-grid-layout(2, $selector, $gutter-output, $gutters, $gutter-type, $gutter-position, $breakpoint, $vertical);
+		}
+	}
+	&.has-3-columns {
+		@include xy-grid-layout(1, $selector, $gutter-output, $small-gutters, $gutter-type, $gutter-position, $breakpoint, $vertical);
+		@include breakpoint(medium) {
+			@include xy-grid-layout(3, $selector, $gutter-output, $gutters, $gutter-type, $gutter-position, $breakpoint, $vertical);
+		}
+	}
+	&.has-4-columns {
+		@include xy-grid-layout(1, $selector, $gutter-output, $small-gutters, $gutter-type, $gutter-position, $breakpoint, $vertical);
+		@include breakpoint(medium) {
+			@include xy-grid-layout(4, $selector, $gutter-output, $gutters, $gutter-type, $gutter-position, $breakpoint, $vertical);
+		}
+	}
+	&.has-5-columns {
+		@include xy-grid-layout(1, $selector, $gutter-output, $small-gutters, $gutter-type, $gutter-position, $breakpoint, $vertical);
+		@include breakpoint(medium) {
+			@include xy-grid-layout(5, $selector, $gutter-output, $gutters, $gutter-type, $gutter-position, $breakpoint, $vertical);
+		}
+	}
+	&.has-6-columns {
+		@include xy-grid-layout(1, $selector, $gutter-output, $small-gutters, $gutter-type, $gutter-position, $breakpoint, $vertical);
+		@include breakpoint(medium) {
+			@include xy-grid-layout(6, $selector, $gutter-output, $gutters, $gutter-type, $gutter-position, $breakpoint, $vertical);
+		}
+	}
+	.wp-block-column {
+		flex: none;
+		flex-basis: none;
+	}
+}
+.alignfull {
+	width: 100vw;
+	max-width: 100vw;
+	margin-left: calc(50% - 50vw);
+}

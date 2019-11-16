@@ -1,0 +1,22 @@
+/** ltg mastered */
+
+/** DEBUG stuff */
+
+.ltg-debug {
+  display: none;
+  color: fuchsia;
+}
+
+/** CUSTOM stuff */
+
+.swiper-featured-galerie {
+  .swiper-slide {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+  }
+}
+
+.footer-container{
+	border-top:none;
+}
