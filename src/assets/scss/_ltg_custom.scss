@@ -5,6 +5,9 @@
 .ltg-debug {
   display: none;
   color: fuchsia;
+  background-color: #555;
+  padding: 0.5rem;
+  font-size: 0.8rem;
 }
 
 /** CUSTOM stuff */
@@ -17,6 +20,142 @@
   }
 }
 
-.footer-container{
-	border-top:none;
+.footer-container {
+  border-top: none !important;
+}
+.post-thumbnail-container {
+  margin-top: 3rem;
+}
+.holzh-bg-wrapper {
+  padding: 5rem 0 1rem;
+  background-color: $light-gray;
+  .main-grid {
+    margin-top: 0;
+  }
+  .container {
+    @extend .main-container;
+  }
+  &.bg-wrapper-logo {
+    background-color: #fff;
+  }
+}
+.holzh-logo {
+  max-width: 300px;
+  font-size: 2rem;
+  line-height: 1.2;
+  .holzh-logo-zeile-eins {
+    color: $primary-color;
+  }
+  .holzh-logo-zeile-zwei {
+    color: $secondary-color;
+  }
+}
+.holzh-menu-burger {
+  text-align: right;
+  padding-bottom: 2px;
+}
+
+.holzh-top-bar {
+  $mPadding: 0.5rem 0.8rem;
+
+  justify-content: space-between;
+  z-index: 999999;
+  .desktop-menu {
+    z-index: 3000;
+  }
+  .dropdown.menu > li {
+    & > a {
+      padding: $mPadding;
+      background: none;
+      color: #000;
+    }
+    & > a:hover {
+      color: #555;
+      background-color: #fff;
+    }
+    &.is-dropdown-submenu-parent > a {
+      padding: $mPadding;
+      &::after {
+        display: none;
+      }
+    }
+    &:last-child > a,
+    &:last-child.is-dropdown-submenu-parent > a {
+      padding-right: 0;
+    }
+  }
+  .dropdown.menu > li > .is-dropdown-submenu {
+    background-color: #ebebebe6;
+    border: none;
+    /*font-size: 0.8rem;*/
+    padding-top: 0rem;
+    & > li > a {
+      color: #555;
+      &:hover {
+        color: #ccc;
+      }
+    }
+  }
+
+  #holzh-mobile-menu {
+    margin-top: 2rem;
+    $mobile-menu-border: 1px solid $mobile-menu-border-arrow-color;
+    a {
+      color: $primary-color;
+      border-top: $mobile-menu-border;
+    }
+    .is-active > a {
+      background-color: $mobile-menu-border-arrow-color;
+    }
+    button.submenu-toggle {
+      border-top: $mobile-menu-border;
+    }
+
+    border-bottom: $mobile-menu-border;
+  }
+}
+
+.holzh-info {
+  background-color: #ffffffdc;
+  padding: 2rem;
+  z-index: 99993;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+}
+.liste-werk-werk-bild {
+  position: relative;
+}
+.holzh-caption-trigger {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  & > .holzh-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0.5rem;
+    margin: 0;
+    color: #fff;
+    -webkit-filter: opacity(0);
+    filter: opacity(0);
+    transition: 1s;
+  }
+  &:hover > .holzh-caption {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-filter: opacity(1);
+    filter: opacity(1);
+    display: inline;
+    transition: 0.1s;
+  }
 }

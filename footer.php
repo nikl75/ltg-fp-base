@@ -10,7 +10,7 @@
 ?>
 
 <footer class="footer-container">
-	<div class="footer-grid">
+	<div class="footer-grid grid-margin-x">
 		<?php dynamic_sidebar( 'footer-widgets' ); ?>
 	</div>
 </footer>
