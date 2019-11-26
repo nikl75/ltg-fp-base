@@ -64,7 +64,6 @@ function werkeShowList($tWerkList)
 	if ($tWerkList->have_posts()) {
 		while ($tWerkList->have_posts()) {
 			$tWerkList->the_post();
-			echo '<div class="liste-werk-werk-title small-12 cell">' . get_the_title() . '</div>';
 
 			$images = get_field('holzh_galerie');
 			$size = 'holzh_werk_gal';
