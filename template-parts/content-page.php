@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if( !get_field('holzh_verbergen', get_the_ID()) ): ?>
+	<?php if( !get_field('sike_verbergen', get_the_ID()) ): ?>
 	<header>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header>

@@ -1,7 +1,7 @@
 <?php
 // If a featured image is set, insert into layout and use Interchange
 // to select the optimal image size per named media query.
-if (!get_field('holzh_beitragsbild_verbergen', $post->ID)) {
+if (!get_field('sike_beitragsbild_verbergen', $post->ID)) {
 	echo '<div class="grid-container post-thumbnail-container">';
 	if (has_post_thumbnail($post->ID)) {
 		echo '	

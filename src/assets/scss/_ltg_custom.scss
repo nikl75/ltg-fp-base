@@ -26,7 +26,7 @@
 .post-thumbnail-container {
   margin-top: 3rem;
 }
-.holzh-bg-wrapper {
+.sike-bg-wrapper {
   padding: 5rem 0 1rem;
   background-color: $light-gray;
   .main-grid {
@@ -39,23 +39,23 @@
     background-color: #fff;
   }
 }
-.holzh-logo {
+.sike-logo {
   max-width: 300px;
   font-size: 2rem;
   line-height: 1.2;
-  .holzh-logo-zeile-eins {
+  .sike-logo-zeile-eins {
     color: $primary-color;
   }
-  .holzh-logo-zeile-zwei {
+  .sike-logo-zeile-zwei {
     color: $secondary-color;
   }
 }
-.holzh-menu-burger {
+.sike-menu-burger {
   text-align: right;
   padding-bottom: 2px;
 }
 
-.holzh-top-bar {
+.sike-top-bar {
   $mPadding: 0.5rem 0.8rem;
 
   justify-content: space-between;
@@ -97,7 +97,7 @@
     }
   }
 
-  #holzh-mobile-menu {
+  #sike-mobile-menu {
     margin-top: 2rem;
     $mobile-menu-border: 1px solid $mobile-menu-border-arrow-color;
     a {
@@ -115,8 +115,8 @@
   }
 }
 
-.holzh-info {
-  $holzh-label-color: #999;
+.sike-info {
+  $sike-label-color: #999;
   background-color: #ffffffdc;
   padding: 2rem;
   
@@ -126,34 +126,34 @@
   right: 0;
   bottom: 0;
   width: 300px;
-  .holzh-term-objekt{
-    color: $holzh-label-color;
+  .sike-term-objekt{
+    color: $sike-label-color;
   }
-  .holzh-title > h2{
+  .sike-title > h2{
     margin-bottom: 0rem;
   }
-  .holzh-untertitel{
+  .sike-untertitel{
     margin-top: 0rem;
   }
-  .holzh-terms-material{
-    color: $holzh-label-color;
+  .sike-terms-material{
+    color: $sike-label-color;
     // font-size: 0.8rem;
     margin-top: 1rem;
   }
-  .holzh-name{
+  .sike-name{
     margin-top: 2rem;
   }
 }
 .liste-werk-werk-bild {
   position: relative;
 }
-.holzh-caption-trigger {
+.sike-caption-trigger {
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
-  & > .holzh-caption {
+  & > .sike-caption {
     background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     top: 100%;
@@ -167,7 +167,7 @@
     filter: opacity(0);
     transition: 1s;
   }
-  &:hover > .holzh-caption {
+  &:hover > .sike-caption {
     top: 0;
     left: 0;
     bottom: 0;

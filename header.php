@@ -27,24 +27,24 @@
 
 	<header class="site-header" role="banner">
 
-		<div class="holzh-bg-wrapper bg-wrapper-logo">
+		<div class="sike-bg-wrapper bg-wrapper-logo">
 			<div class="container">
-				<div class="holzh-top-bar main-grid align-bottom main-content-full-width grid-x grid-margin-x">
-					<div class="holzh-logo cell shrink">
+				<div class="sike-top-bar main-grid align-bottom main-content-full-width grid-x grid-margin-x">
+					<div class="sike-logo cell shrink">
 						<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-							<span class="holzh-logo-zeile-eins">Holzhandwerk</span><br />
-							<span class="holzh-logo-zeile-zwei">Allgäu<br />
+							<span class="sike-logo-zeile-eins">sikeandwerk</span><br />
+							<span class="sike-logo-zeile-zwei">Allgäu<br />
 								Oberschwaben</span>
 						</a>
 					</div>
 
-					<nav class="site-navigation-desktop cell shrink holzh-top-bar-menu">
+					<nav class="site-navigation-desktop cell shrink sike-top-bar-menu">
 						<?php foundationpress_top_bar_r(); ?>
-						<button aria-label="<?php _e('Main Menu', 'foundationpress'); ?>" class="show-for-small-only menu-icon" type="button" data-toggle="holzh-mobile-menu"></button>
+						<button aria-label="<?php _e('Main Menu', 'foundationpress'); ?>" class="show-for-small-only menu-icon" type="button" data-toggle="sike-mobile-menu"></button>
 					</nav>
 
 					<?php if (!get_theme_mod('wpt_mobile_menu_layout') || get_theme_mod('wpt_mobile_menu_layout') === 'topbar') : ?>
-						<nav id="holzh-mobile-menu" class="site-navigation-mobile cell small-12 holzh-top-bar-mobile is-hidden" data-toggler=".is-hidden">
+						<nav id="sike-mobile-menu" class="site-navigation-mobile cell small-12 sike-top-bar-mobile is-hidden" data-toggler=".is-hidden">
 							<?php get_template_part('template-parts/mobile-top-bar'); ?>
 						</nav>
 					<?php endif; ?>

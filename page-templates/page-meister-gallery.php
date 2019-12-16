@@ -7,9 +7,9 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/featured-image'); ?>
 <div class="main-container">
-	<div class="main-grid grid-margin-x grid-x grid-margin-y holzh-meister-page-title">
+	<div class="main-grid grid-margin-x grid-x grid-margin-y sike-meister-page-title">
 
-		<?php if (!get_field('holzh_titel_verbergen', get_the_ID())) : ?>
+		<?php if (!get_field('sike_titel_verbergen', get_the_ID())) : ?>
 			<header class="cell small-12">
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 			</header>

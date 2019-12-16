@@ -1,6 +1,6 @@
 <?php
 
-add_image_size('holzh_werk_gal', 600,450,true);
+add_image_size('sike_werk_gal', 600,450,true);
 
 function ltg_theme_setup()
 {
@@ -130,12 +130,12 @@ function werkeShowList($tWerkList)
 			$tWerkList->the_post();
 
 			// getting field-group galerie and count difference to 4
-			$images = get_field('holzh_galerie');
-			$size = 'holzh_werk_gal';
+			$images = get_field('sike_galerie');
+			$size = 'sike_werk_gal';
 			$tIC = (count($images) < 4) ? count($images) : 4;
 
 			// getting field-group
-			$name = get_field('holzh_von');
+			$name = get_field('sike_von');
 
 			// getting terms
 			$tJ = printTermList(get_the_terms(get_the_ID(), 'jahr'));
@@ -147,27 +147,27 @@ function werkeShowList($tWerkList)
 				for ($tImCount = 0; $tImCount <= $tIC - 1; $tImCount++) {
 					$tRe .= '<a href="' . $images[$tImCount]['url'] . '" data-fancybox="gal-' . get_the_ID() . '" class="liste-werk-werk-bild small-12 medium-6 large-3 cell">';
 					$tRe .= wp_get_attachment_image($images[$tImCount]['ID'], $size);
-					$tRe .= '<div class="holzh-caption-trigger"><div class="holzh-caption liste werk">' . get_the_title() . '</div></div>';
+					$tRe .= '<div class="sike-caption-trigger"><div class="sike-caption liste werk">' . get_the_title() . '</div></div>';
 					$tRe .= '</a>';
 				}
 				for ($tNonImCount = 0; $tNonImCount <= 3 - $tIC; $tNonImCount++) {
-					$tRe .= '<div class="holzh-spacer cell medium-6 large-3 hide-for-small-only"></div>';
+					$tRe .= '<div class="sike-spacer cell medium-6 large-3 hide-for-small-only"></div>';
 				}
 			}
 
 			$tRe .= 
 				'
-				<div class="holzh-info is-hidden" id="holzh-infobox-' . get_the_ID() . '">
-				<div class="holzh-term-objekt">' . $tO . '</div>
-				<div class="holzh-title"><h2>' . get_the_title() . '</h2></div>
-				<div class="holzh-untertitel">' . get_field('holzh_untertitel') . '</div>
-				<div class="holzh-terms-material">' . $tM . '</div>
-				<div class="holzh-name">' . $name['holzh_gef_vorname'] . ' ' . $name['holzh_gef_nachname'] . '</div>
-				<div class="holzh-kontakt">' . get_field('holzh_kontakt') . '</div>
-				<div class="holzh-e-mail"><a href="mailto:' . get_field('holzh_e-mail') . '">' . get_field('holzh_e-mail') . '</a></div>
-				<div class="holzh-gefertigt-bei">' . get_field('holzh_gefertigt_bei') . '</div>
-				<div class="holzh-ausbildungsbetrieb">' . get_field('holzh_ausbildungsbetrieb') . '</div>
-				<div class="holzh-term-jahr">' . $tJ . '</div>
+				<div class="sike-info is-hidden" id="sike-infobox-' . get_the_ID() . '">
+				<div class="sike-term-objekt">' . $tO . '</div>
+				<div class="sike-title"><h2>' . get_the_title() . '</h2></div>
+				<div class="sike-untertitel">' . get_field('sike_untertitel') . '</div>
+				<div class="sike-terms-material">' . $tM . '</div>
+				<div class="sike-name">' . $name['sike_gef_vorname'] . ' ' . $name['sike_gef_nachname'] . '</div>
+				<div class="sike-kontakt">' . get_field('sike_kontakt') . '</div>
+				<div class="sike-e-mail"><a href="mailto:' . get_field('sike_e-mail') . '">' . get_field('sike_e-mail') . '</a></div>
+				<div class="sike-gefertigt-bei">' . get_field('sike_gefertigt_bei') . '</div>
+				<div class="sike-ausbildungsbetrieb">' . get_field('sike_ausbildungsbetrieb') . '</div>
+				<div class="sike-term-jahr">' . $tJ . '</div>
 			</div>';
 		}
 	}

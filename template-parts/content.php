@@ -19,7 +19,7 @@ if (is_user_logged_in()) {
 
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if (!get_field('holzh_titel_verbergen', get_the_ID())) : ?>
+	<?php if (!get_field('sike_titel_verbergen', get_the_ID())) : ?>
 		<header>
 			<?php
 				if (is_single()) {
