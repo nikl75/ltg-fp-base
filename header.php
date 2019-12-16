@@ -32,9 +32,9 @@
 				<div class="sike-top-bar main-grid align-bottom main-content-full-width grid-x grid-margin-x">
 					<div class="sike-logo cell shrink">
 						<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-							<span class="sike-logo-zeile-eins">sikeandwerk</span><br />
-							<span class="sike-logo-zeile-zwei">Allgäu<br />
-								Oberschwaben</span>
+							<?php if (function_exists('the_custom_logo')) {
+										the_custom_logo();
+									} ?>
 						</a>
 					</div>
 

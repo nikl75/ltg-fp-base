@@ -7,19 +7,19 @@ function ltg_theme_setup()
     // add Gutenberg align-wide and align-full support
     add_theme_support('align-wide');
 
-    // // CUSTOM LOGO
-    // $defaults = array(
-    //     'height'      => 100,
-    //     'width'       => 400,
-    //     'flex-height' => true,
-    //     'flex-width'  => true,
-    //     'header-text' => array('site-title', 'site-description'), //hides listed classes when logo appears
-    // );
-    // add_theme_support('custom-logo', $defaults);
+    // CUSTOM LOGO
+    $defaults = array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array('site-title', 'site-description'), //hides listed classes when logo appears
+    );
+    add_theme_support('custom-logo', $defaults);
 
     // CUSTOM HEADER BILD
     $defaults = array(
-        'default-image'          => get_template_directory_uri() . '/dist/assets/images/corporate/featured-image-default.jpg',
+        'default-image'          => get_template_directory_uri() . '/dist/assets/images/corporate/featured-image-default.png',
         'random-default'         => false,
         'width'                  => 2000,
         'height'                 => 500,
@@ -38,8 +38,8 @@ function ltg_theme_setup()
 
     register_default_headers( array(
         'default-image' => array(
-            'url'           => get_stylesheet_directory_uri() . '/dist/assets/images/corporate/featured-image-default.jpg',
-            'thumbnail_url' => get_stylesheet_directory_uri() . '/dist/assets/images/corporate/featured-image-default.jpg',
+            'url'           => get_stylesheet_directory_uri() . '/dist/assets/images/corporate/featured-image-default.png',
+            'thumbnail_url' => get_stylesheet_directory_uri() . '/dist/assets/images/corporate/featured-image-default.png',
             'description'   => __( 'Default Header Image', 'ltg' )
         ),
     ) );
