@@ -3,7 +3,7 @@ var tGalInfoID;
 $(document).on('onActivate.fb', function( e, instance, slide ) {
     // Your code goes here
 
-    tGal = instance.group[0].opts.fancybox.slice(4);
+    tGal = instance.group[0].opts.fbid;
     tGalInfoID = '#holzh-infobox-'+tGal;
 
 });

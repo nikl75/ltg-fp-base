@@ -129,6 +129,15 @@
   .holzh-term-objekt{
     color: $holzh-label-color;
   }
+  .holzh-unsichtbar-abfang{
+    // background-color: #ff00ff88;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: -5;
+  }
   .holzh-title > h2{
     margin-bottom: 0rem;
   }
