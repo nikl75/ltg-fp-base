@@ -13,8 +13,8 @@ get_header(); ?>
 			<header class="cell small-12">
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 			</header>
+	</div>
 		<?php endif; ?>
-		</div>
 		<?php
 			$re = custom_werke_liste(array());
 			echo $re;
