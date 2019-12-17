@@ -145,8 +145,8 @@ function werkeShowList($tWerkList)
 			// build post
 			if ($images) {
 				for ($tImCount = 0; $tImCount <= $tIC - 1; $tImCount++) {
-					// $tRe .= '<a href="' . $images[$tImCount]['url'] . '" data-fancybox="gal-' . get_the_ID() . '" data-fbID="' . get_the_ID() . '" class="liste-werk-werk-bild small-12 medium-6 large-3 cell">';
-					$tRe .= '<a href="' . $images[$tImCount]['url'] . '" data-fancybox="gal-gesamt" data-fbID="' . get_the_ID() . '" class="liste-werk-werk-bild small-12 medium-6 large-3 cell">';
+					$tRe .= '<a href="' . $images[$tImCount]['url'] . '" data-fancybox="gal-' . get_the_ID() . '" data-fbID="' . get_the_ID() . '" class="liste-werk-werk-bild small-12 medium-6 large-3 cell">';
+					// $tRe .= '<a href="' . $images[$tImCount]['url'] . '" data-fancybox="gal-gesamt" data-fbID="' . get_the_ID() . '" class="liste-werk-werk-bild small-12 medium-6 large-3 cell">';
 					$tRe .= wp_get_attachment_image($images[$tImCount]['ID'], $size);
 					$tRe .= '<div class="holzh-caption-trigger"><div class="holzh-caption liste werk">' . get_the_title() . '</div></div>';
 					$tRe .= '</a>';
