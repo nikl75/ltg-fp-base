@@ -79,14 +79,12 @@ function custom_werke_liste( $atts) {
     $re .= '<div class="main-grid grid-margin-x grid-x grid-margin-y">';
 
     if ($tJahre) {
-        // echo '$member_group_terms';
         foreach ($tJahre as $tJahr) {
             $re .= '<div class="cell small-12 liste-werk liste-jahr">' . $tJahr . '</div>';
             $tS = werkeSammeln($tJahr, $tCat, $tOrder);
             $re .= werkeShowList($tS);
         }
     } else {
-        // echo '$member_group_terms empty';
         $tS = werkeSammeln('', $tCat, $tOrder);
         $re .= werkeShowList($tS);
     }
@@ -130,9 +128,8 @@ function werkeShowList($tWerkList)
 			$tWerkList->the_post();
 
 			// getting field-group galerie and count difference to 4
-			$images = get_field('sike_galerie');
+			$image = get_the_post_thumbnail();
 			$size = 'sike_werk_gal';
-			$tIC = (count($images) < 4) ? count($images) : 4;
 
 			// getting field-group
 			$name = get_field('sike_von');
@@ -143,32 +140,13 @@ function werkeShowList($tWerkList)
 			$tO = printTermList(get_the_terms(get_the_ID(), 'objekt'));
 
 			// build post
-			if ($images) {
-				for ($tImCount = 0; $tImCount <= $tIC - 1; $tImCount++) {
-					$tRe .= '<a href="' . $images[$tImCount]['url'] . '" data-fancybox="gal-' . get_the_ID() . '" class="liste-werk-werk-bild small-12 medium-6 large-3 cell">';
-					$tRe .= wp_get_attachment_image($images[$tImCount]['ID'], $size);
+			if ($image) {
+					$tRe .= '<a href="' . get_the_permalink() . '" class="liste-werk-thumbnail small-12 medium-6 large-3 cell">';
+					$tRe .= $image;
 					$tRe .= '<div class="sike-caption-trigger"><div class="sike-caption liste werk">' . get_the_title() . '</div></div>';
 					$tRe .= '</a>';
-				}
-				for ($tNonImCount = 0; $tNonImCount <= 3 - $tIC; $tNonImCount++) {
-					$tRe .= '<div class="sike-spacer cell medium-6 large-3 hide-for-small-only"></div>';
-				}
 			}
 
-			$tRe .= 
-				'
-				<div class="sike-info is-hidden" id="sike-infobox-' . get_the_ID() . '">
-				<div class="sike-term-objekt">' . $tO . '</div>
-				<div class="sike-title"><h2>' . get_the_title() . '</h2></div>
-				<div class="sike-untertitel">' . get_field('sike_untertitel') . '</div>
-				<div class="sike-terms-material">' . $tM . '</div>
-				<div class="sike-name">' . $name['sike_gef_vorname'] . ' ' . $name['sike_gef_nachname'] . '</div>
-				<div class="sike-kontakt">' . get_field('sike_kontakt') . '</div>
-				<div class="sike-e-mail"><a href="mailto:' . get_field('sike_e-mail') . '">' . get_field('sike_e-mail') . '</a></div>
-				<div class="sike-gefertigt-bei">' . get_field('sike_gefertigt_bei') . '</div>
-				<div class="sike-ausbildungsbetrieb">' . get_field('sike_ausbildungsbetrieb') . '</div>
-				<div class="sike-term-jahr">' . $tJ . '</div>
-			</div>';
 		}
 	}
 
