@@ -80,14 +80,19 @@ function custom_werke_liste( $atts) {
 
     if ($tJahre) {
         // echo '$member_group_terms';
-        foreach ($tJahre as $tJahr) {
-            $re .= '<div class="cell small-12 liste-werk liste-jahr">' . $tJahr . '</div>';
-            $tS = werkeSammeln($tJahr, $tCat, $tOrder);
+        foreach ($tJahre as $tTerms) {
+            $re .= '<div class="cell small-12 liste-werk liste-jahr">' . $tTerms . '</div>';
+            $tS = werkeSammeln($tTerms, $tCat, $tOrder);
             $re .= werkeShowList($tS);
         }
     } else {
         // echo '$member_group_terms empty';
         $tS = werkeSammeln('', $tCat, $tOrder);
+
+        // echo '<pre>';
+        // print_r($tS);
+        // echo '</pre>';
+
         $re .= werkeShowList($tS);
     }
 
@@ -97,28 +102,38 @@ function custom_werke_liste( $atts) {
 }
 add_shortcode('werke-liste', 'custom_werke_liste');
 
-function werkeSammeln($tJahr, $tCat, $tOrder)
+function werkeSammeln($tTerms, $tCat, $tOrder)
 {
-	if ($tJahr != '') {
+	if ($tTerms != '') {
 		$tTt = array(
 			array(
 				'taxonomy' => 'jahr',
 				'field' => 'slug',
-				'terms' => array($tJahr),
+				'terms' => array($tTerms),
 				'operator' => 'IN',
 			)
 		);
 	} else {
 		$tTt = '';
-	}
-	$tQuery = new WP_Query(array(
+    }
+    $tQa = array(
         'post_type' => 'werke',
         'category_name' => $tCat,
-        'orderby'   => 'meta_value',
-        'meta_key'  => $tOrder,
         'order' => 'ASC',
 		'tax_query' => $tTt
-	));
+    );
+    if($tOrder != ''){
+        $tQa += [
+            'orderby'   => 'meta_value',
+            'meta_key'  => $tOrder,
+        ];
+    }
+        // echo '<pre>';
+        // print_r($tQa);
+        // echo '</pre>';
+
+
+	$tQuery = new WP_Query($tQa);
 	return $tQuery;
 }
 
@@ -134,8 +149,6 @@ function werkeShowList($tWerkList)
 			$size = 'holzh_werk_gal';
 			$tIC = (count($images) < 4) ? count($images) : 4;
 
-			// getting field-group
-			$name = get_field('holzh_von');
 
 			// getting terms
 			$tJ = printTermList(get_the_terms(get_the_ID(), 'jahr'));
@@ -158,19 +171,23 @@ function werkeShowList($tWerkList)
 
 			$tRe .= 
                 '
-				<div class="holzh-info is-hidden" id="holzh-infobox-' . get_the_ID() . '">
-				<div class="holzh-term-objekt">' . $tO . '</div>
-				<div class="holzh-title"><h2>' . get_the_title() . '</h2></div>
-				<div class="holzh-untertitel">' . get_field('holzh_untertitel') . '</div>
-				<div class="holzh-terms-material">' . $tM . '</div>
-				<div class="holzh-name">' . $name['holzh_gef_vorname'] . ' ' . $name['holzh_gef_nachname'] . '</div>
-				<div class="holzh-kontakt">' . get_field('holzh_kontakt') . '</div>
-				<div class="holzh-e-mail"><a href="mailto:' . get_field('holzh_e-mail') . '">' . get_field('holzh_e-mail') . '</a></div>
-				<div class="holzh-gefertigt-bei">' . get_field('holzh_gefertigt_bei') . '</div>
-				<div class="holzh-ausbildungsbetrieb">' . get_field('holzh_ausbildungsbetrieb') . '</div>
-				<div class="holzh-term-jahr">' . $tJ . '</div>
-                <div class="holzh-unsichtbar-abfang"></div>
-			</div>';
+                <div class="holzh-info is-hidden" id="holzh-infobox-' . get_the_ID() . '">
+                    <div class="holzh-infobox-scroll">
+                        <div class="holzh-term-objekt">' . $tO . '</div>
+                        <div class="holzh-title"><h2>' . get_the_title() . '</h2></div>
+                        <div class="holzh-untertitel">' . get_field('holzh_untertitel') . '</div>
+                        <div class="holzh-terms-material">' . $tM . '</div>
+                        <div class="holzh-beschreibung">' . get_field('holzh_beschreibung') . ' ' . get_field('holzh_gef_nachname') . '</div>
+                        <div class="holzh-name">' . get_field('holzh_gef_vorname') . ' ' . get_field('holzh_gef_nachname') . '</div>
+                        <div class="holzh-kontakt">' . get_field('holzh_kontakt') . '</div>
+                        <div class="holzh-e-mail"><a href="mailto:' . get_field('holzh_e-mail') . '">' . get_field('holzh_e-mail') . '</a></div>
+                        <div class="holzh-gefertigt-bei">' . get_field('holzh_gefertigt_bei') . '</div>
+                        <div class="holzh-ausbildungsbetrieb">' . get_field('holzh_ausbildungsbetrieb') . '</div>
+                        <div class="holzh-term-jahr">' . $tJ . '</div>
+                        <div class="holzh-unsichtbar-abfang"></div>
+                    </div>
+
+                </div>';
 		}
 	}
 
@@ -180,14 +197,14 @@ function werkeShowList($tWerkList)
     return $tRe;
 }
 
-function printTermList($tJahr)
+function printTermList($tTerms)
 {
 	$re = array();
-	if(! empty($tJahr)){
-		foreach ($tJahr as $tT) {
+	if(! empty($tTerms)){
+		foreach ($tTerms as $tT) {
 			array_push($re, $tT->name );
 		}
 	}
-	$re = implode('<br/>', $re);
+	$re = implode(' | ', $re);
 	return $re;
 }
