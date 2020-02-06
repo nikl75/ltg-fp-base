@@ -21,10 +21,8 @@
 
 <body <?php body_class(); ?>>
 
-	<?php if(is_user_logged_in()) : ?>
 	<?php if (get_theme_mod('wpt_mobile_menu_layout') === 'offcanvas') : ?>
 		<?php get_template_part('template-parts/mobile-off-canvas'); ?>
-	<?php endif; ?>
 	<?php endif; ?>
 
 	<header class="site-header" role="banner">
@@ -40,7 +38,6 @@
 						</a>
 					</div>
 
-					<?php if(is_user_logged_in()) : ?>
 
 					<nav class="site-navigation-desktop cell shrink holzh-top-bar-menu">
 						<?php foundationpress_top_bar_r(); ?>
@@ -53,7 +50,6 @@
 						</nav>
 					<?php endif; ?>
 
-					<?php endif; ?>
 
 				</div>
 			</div>

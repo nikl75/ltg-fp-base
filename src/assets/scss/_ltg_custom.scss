@@ -12,6 +12,31 @@
 
 /** CUSTOM stuff */
 
+h1:not(first-child),
+h2:not(first-child),
+h3:not(first-child),
+h4:not(first-child),
+h5:not(first-child),
+h6:not(first-child) {
+  margin-top: 2rem;
+}
+.entry-content {
+  .main-grid {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .c-accordion__title {
+    color: $primary-color ;
+    // border-bottom: 1px solid rgb(209, 199, 164);
+    &:hover{
+      background-color: rgb(247, 244, 234);
+    }
+  }
+  .c-accordion__content{
+    // border-bottom: 1px solid rgb(209, 199, 164);
+    p{max-width: 770px;}
+  }
+}
 .swiper-featured-galerie {
   .swiper-slide {
     background-size: cover !important;
@@ -26,9 +51,9 @@
 .post-thumbnail-container {
   margin-top: 3rem;
 }
-.main-grid .main-content-full-width{
-  margin-left: 0.9357rem!important;
-  margin-right: 0.9375rem!important;
+.main-grid .main-content-full-width {
+  margin-left: 0.9357rem !important;
+  margin-right: 0.9375rem !important;
 }
 
 .holzh-bg-wrapper {
@@ -36,7 +61,6 @@
   background-color: $light-gray;
   .main-grid {
     margin-top: 0;
-
   }
   .container {
     @extend .main-container;
@@ -91,7 +115,7 @@
     }
   }
   .dropdown.menu > li > .is-dropdown-submenu {
-    background-color: #ebebebe6;
+    background-color: rgba(235, 235, 235, 0.85);
     border: none;
     /*font-size: 0.8rem;*/
     padding-top: 0rem;
@@ -122,10 +146,10 @@
 }
 
 .holzh-info {
-  $holzh-label-color: #000;
-  background-color: #ffffffdc;
+  $holzh-label-color: rgb(100, 100, 100);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 2rem;
-  
+
   z-index: 99993;
   position: fixed;
   top: 0;
@@ -134,10 +158,10 @@
   width: 100%;
   max-width: 500px;
   overflow: scroll;
-  .holzh-term-objekt{
+  .holzh-term-objekt {
     color: $holzh-label-color;
   }
-  .holzh-unsichtbar-abfang{
+  .holzh-unsichtbar-abfang {
     // background-color: #ff00ff88;
     top: 0;
     bottom: 0;
@@ -146,24 +170,35 @@
     position: fixed;
     z-index: -5;
   }
-  .holzh-title > h2{
+  .holzh-title > h2 {
     margin-bottom: 0rem;
   }
-  .holzh-untertitel{
+  .holzh-untertitel {
     margin-top: 0rem;
   }
-  .holzh-terms-material{
+  .holzh-terms-material {
     color: $holzh-label-color;
     // font-size: 0.8rem;
-    margin-top: 1rem;
+    margin: 1rem 0;
   }
-  .holzh-name{
+  .holzh-name {
     margin-top: 2rem;
+  }
+  .holzh-kontakt {
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .holzh-abschnitt {
+    margin-bottom: 1rem;
+    &.b3 {
+      color: $holzh-label-color;
+    }
   }
 }
 .liste-werk-werk-bild {
   position: relative;
-  background-color: #E8EBEE;
+  background-color: #e8ebee;
 }
 .holzh-caption-trigger {
   top: 0;
@@ -187,7 +222,7 @@
   }
   &:hover > .holzh-caption {
     padding: 0.5rem;
- 
+
     top: 0;
     left: 0;
     bottom: 0;

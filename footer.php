@@ -21,12 +21,8 @@
 
 </footer>
 
-<?php if(is_user_logged_in()) : ?>
-
 <?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
 	</div><!-- Close off-canvas content -->
-<?php endif; ?>
-
 <?php endif; ?>
 
 <?php wp_footer(); ?>
