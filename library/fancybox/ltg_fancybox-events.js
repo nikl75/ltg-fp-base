@@ -24,10 +24,13 @@ $.fancybox.defaults.btnTpl.info = '<button data-fancybox-holzh-info class="fancy
 $('body').on('click', '[data-fancybox-holzh-info]', function() {
     showHolzhInfo();
 });
-$('body').on('click', '.holzh-info', function(){
+$('body').on('click', '.holzh-info .infobox-button', function(){
     hideHohlzhInfo();
 });
 
+$('body').on('click', '.holzh-info', function(){
+    hideHohlzhInfo();
+});
 
 // Customize buttons
 $( '[data-fancybox]' ).fancybox({

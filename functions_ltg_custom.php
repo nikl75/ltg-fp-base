@@ -170,7 +170,9 @@ function werkeShowList($tWerkList)
             }
 
             $tRe .='        <div class="holzh-info is-hidden" id="holzh-infobox-' . get_the_ID() . '">
-                                <div class="holzh-infobox-scroll">';
+                                <div class="holzh-infobox-scroll">
+                                    <button data-holzh-infobox-close class="infobox-button infobox-button--close" title="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.6L6.6 5.2 5.2 6.6l5.4 5.4-5.4 5.4 1.4 1.4 5.4-5.4 5.4 5.4 1.4-1.4-5.4-5.4 5.4-5.4-1.4-1.4-5.4 5.4z"></path></svg>
+                                    </button>';
  
             $tRe .=                                     '<div class="holzh-abschnitt b1">';
             $tRe .=($tO ?                                   '<div class="holzh-term-objekt">' . $tO . '</div>' : '');
@@ -180,14 +182,20 @@ function werkeShowList($tWerkList)
             $tRe .=(get_field('holzh_beschreibung') ?       '<div class="holzh-beschreibung">' . get_field('holzh_beschreibung') . '</div>' : '');
             $tRe .=                                     '</div>
                                                          <div class="holzh-abschnitt b2">';
-            $tRe .=(get_field('holzh_gef_vorname')?         '<div class="holzh-name">' . get_field('holzh_gef_vorname') . ' ' . get_field('holzh_gef_nachname') . '</div>' : '');
+
+            $tName = '';
+            $tName .=(get_field('holzh_gef_vorname')?         get_field('holzh_gef_vorname').' ' : '');                                       
+            $tName .=(get_field('holzh_gef_nachname')?         get_field('holzh_gef_nachname') : '');                                       
+
+            $tRe .=(get_field('holzh_firma')?             '<div class="holzh-firma">' . get_field('holzh_firma') . '</div>' : '');
+            $tRe .=($tName != ''?         '<div class="holzh-name">' . $tName . '</div>' : '');
             $tRe .=(get_field('holzh_kontakt')?             '<div class="holzh-kontakt">' . get_field('holzh_kontakt') . '</div>' : '');
             $tRe .=(get_field('holzh_e-mail')?              '<div class="holzh-e-mail"><a href="mailto:' . get_field('holzh_e-mail') . '">' . get_field('holzh_e-mail') . '</a></div>' : '');
             $tRe .=(get_field('holzh_internet-seite')?      '<div class="holzh-internet-seite"><a href="http://'. get_field('holzh_internet-seite') .'" target="_blank">' . get_field('holzh_internet-seite') . '</a></div>' : '');
             $tRe .=                                     '</div>
                                                          <div class="holzh-abschnitt b3">';
-            $tRe .=(get_field('holzh_gefertigt_bei')?       '<div class="holzh-gefertigt-bei">' . get_field('holzh_gefertigt_bei') . '</div>' : '');
-            $tRe .=(get_field('holzh_ausbildungsbetrieb')?  '<div class="holzh-ausbildungsbetrieb">' . get_field('holzh_ausbildungsbetrieb') . '</div>' : '');
+            $tRe .=(get_field('holzh_gefertigt_bei')?       '<div class="holzh-gefertigt-bei">Gefertigt bei: ' . get_field('holzh_gefertigt_bei') . '</div>' : '');
+            $tRe .=(get_field('holzh_ausbildungsbetrieb')?  '<div class="holzh-ausbildungsbetrieb">Ausbildungsbetrieb: ' . get_field('holzh_ausbildungsbetrieb') . '</div>' : '');
             $tRe .=($tJ?                                    '<div class="holzh-term-jahr">' . $tJ . '</div>' : '');
             $tRe .='                                     </div>
 

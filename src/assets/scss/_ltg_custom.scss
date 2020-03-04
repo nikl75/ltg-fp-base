@@ -181,9 +181,6 @@ h6:not(first-child) {
     // font-size: 0.8rem;
     margin: 1rem 0;
   }
-  .holzh-name {
-    margin-top: 2rem;
-  }
   .holzh-kontakt {
     p {
       margin-bottom: 0;
@@ -191,6 +188,9 @@ h6:not(first-child) {
   }
   .holzh-abschnitt {
     margin-bottom: 1rem;
+    &.b2{
+      margin-top: 2rem;
+    }
     &.b3 {
       color: $holzh-label-color;
     }
@@ -232,4 +232,10 @@ h6:not(first-child) {
     display: inline;
     transition: 0.1s;
   }
+}
+
+.infobox-button.infobox-button--close {
+  max-width: 24px;
+  float: right;
+  cursor: pointer;
 }
