@@ -12,7 +12,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if( !get_field('sike_verbergen', get_the_ID()) ): ?>
 	<header>
-		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<?php if (!get_field('sike_titel_verbergen', get_the_ID())) {
+			the_title('<h1 class="entry-title">', '</h1>');
+		}
+		?>
 	</header>
 	<?php endif; ?>
 	<div class="entry-content">

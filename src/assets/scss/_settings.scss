@@ -66,30 +66,31 @@
 
 // 0. Fonts
 // ---------
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
-$custom-body-font-family: "Titillium Web", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$custom-header-font-family: $custom-body-font-family;
+$custom-body-font-family: "Droid Sans", "Helvetica Neue", sans-serif;
+$custom-header-font-family: "Josefin Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 $mobile-menu-border-arrow-color: #ccc;
 
 // 1. Global
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(900);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #B5962B ,
+  primary: #eb5e5e ,
   secondary: #666,
-  success: #3adb76,
+  success: #8f4d4d,
   warning: #ffae00,
   alert: #cc4b37,
 );
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #0a0a0a;
-$white: #fefefe;
-$body-background: $light-gray;
+$black: #000000;
+$white: #ffffff;
+$body-background: $white;
 $body-font-color: $black;
 $body-font-family: $custom-body-font-family;
 $body-antialiased: true;
@@ -143,7 +144,7 @@ $header-font-family: $custom-header-font-family;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
-$header-color: inherit;
+$header-color: $primary-color;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (

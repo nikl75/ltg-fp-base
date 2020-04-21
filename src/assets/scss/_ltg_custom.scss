@@ -12,6 +12,14 @@
 
 /** CUSTOM stuff */
 
+h1:not(first-child),
+h2:not(first-child),
+h3:not(first-child),
+h4:not(first-child),
+h5:not(first-child),
+h6:not(first-child) {
+  margin-top: 2rem;
+}
 .swiper-featured-galerie {
   .swiper-slide {
     background-size: cover !important;
@@ -63,6 +71,10 @@
   .desktop-menu {
     z-index: 3000;
   }
+  .sike-top-bar-menu {
+    margin-top: 1rem;
+    font-family: $custom-header-font-family;
+  }
   .dropdown.menu > li {
     & > a {
       padding: $mPadding;
@@ -70,18 +82,22 @@
       color: #000;
     }
     & > a:hover {
-      color: #555;
+      color: $primary-color;
       background-color: #fff;
     }
+    &:last-child > a {
+      padding-right: 0;
+    }
+    &:first-child > a {
+      padding-left: 0;
+    }
     &.is-dropdown-submenu-parent > a {
-      padding: $mPadding;
       &::after {
         display: none;
       }
     }
-    &:last-child > a,
-    &:last-child.is-dropdown-submenu-parent > a {
-      padding-right: 0;
+    &.is-submenu-item > a {
+      padding: $mPadding;
     }
   }
   .dropdown.menu > li > .is-dropdown-submenu {
@@ -114,67 +130,64 @@
     border-bottom: $mobile-menu-border;
   }
 }
-
-.sike-info {
-  $sike-label-color: #999;
-  background-color: #ffffffdc;
-  padding: 2rem;
-  
-  z-index: 99993;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 300px;
-  .sike-term-objekt{
-    color: $sike-label-color;
+.post-thumbnail-container {
+  .featured-hero.sike-button {
+    cursor: pointer;
   }
-  .sike-title > h2{
-    margin-bottom: 0rem;
+}
+.featured-hero{
+  height: 20rem!important;
+  @include breakpoint(medium){
+    height: 30rem!important;
   }
-  .sike-untertitel{
-    margin-top: 0rem;
-  }
-  .sike-terms-material{
-    color: $sike-label-color;
-    // font-size: 0.8rem;
-    margin-top: 1rem;
-  }
-  .sike-name{
-    margin-top: 2rem;
+}
+.liste-werk-thumbnail {
+  position: relative;
+  &:first-child{
+    margin-top:0;
   }
 }
 .liste-werk-werk-bild {
   position: relative;
 }
-.sike-caption-trigger {
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  & > .sike-caption {
-    background-color: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    padding: 0.5rem;
-    margin: 0;
-    color: #fff;
-    -webkit-filter: opacity(0);
-    filter: opacity(0);
-    transition: 1s;
+.sike-platzhalter {
+  height: 100px;
+  max-width: 400px;
+  background-color: #ddd;
+}
+.sike-werk-image-galerie{  
+  margin-bottom: (map-get($grid-margin-gutters, small)/2);
+  @include breakpoint(medium) {
+    margin-bottom: (map-get($grid-margin-gutters, medium)/2);
   }
-  &:hover > .sike-caption {
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+}
+.sike-werk-stack{
+  img{
+    @include breakpoint(medium){
+      max-height: 200px;
+      width: auto;
+    }
+  }
+}
+a.liste-werk-thumbnail {
+  & h4.sike-caption {
+    margin-top: 0.5rem;
+    margin-bottom:0;
+  }
+  & .sike-textauszug{
+    color: $body-font-color;
+    font-size: 0.8rem;
+  }
+  @include breakpoint(medium) {
+    & .sike-caption-trigger {
+      -webkit-filter: opacity(0);
+      filter: opacity(0);
+      transition: 1s;
+    }
+  }
+  &:hover .sike-caption-trigger {
     -webkit-filter: opacity(1);
     filter: opacity(1);
-    display: inline;
     transition: 0.1s;
   }
 }

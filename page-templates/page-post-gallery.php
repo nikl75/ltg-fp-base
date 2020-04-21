@@ -1,9 +1,13 @@
 <?php
-/*
-Template Name: Meister Galerie
-*/
 $tQuery;
 get_header(); ?>
+
+<?php
+/* debug file name */
+if (is_user_logged_in()) {
+	echo ('<div class="ltg-debug filename">' . basename(__FILE__) . '</div>');
+}
+?>
 
 <?php get_template_part('template-parts/featured-image'); ?>
 <div class="main-container">

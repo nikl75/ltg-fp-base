@@ -3191,22 +3191,22 @@
         str += " scaleX(" + props.scaleX + ")";
       }
 
-      // if (str.length) {
-        // css.transform = str;
-      // }
+      if (str.length) {
+        css.transform = str;
+      }
 
       if (props.opacity !== undefined) {
         css.opacity = props.opacity;
       }
 
       if (props.width !== undefined) {
-        css.width = '100vw';
-        // css.width = props.width;
+        // css.width = '100vw';
+        css.width = props.width;
       }
 
       if (props.height !== undefined) {
-        css.height = '100vh';
-        // css.height = props.height;
+        // css.height = '100vh';
+        css.height = props.height;
       }
 
       return $el.css(css);

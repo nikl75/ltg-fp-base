@@ -1,7 +1,4 @@
 <?php
-/*
-Template Name: Kitchen Sink
-*/
 get_header(); ?>
 
 

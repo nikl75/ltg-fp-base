@@ -26,7 +26,7 @@ get_header(); ?>
 
 <div class="main-container">
 	<div class="main-grid grid-margin-x">
-		<main class="main-content">
+		<main class="main-content-full-width">
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -52,7 +52,6 @@ get_header(); ?>
 			<?php endif; ?>
 
 		</main>
-		<?php get_sidebar(); ?>
 
 	</div>
 </div>
